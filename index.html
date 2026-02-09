@@ -4,23 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MOODY — Freelance Software Engineer</title>
-  <meta name="description" content="Hi im Daniel Moody a freelance software engineer providing custom web, backend, and API development(and more)." />
+  <meta name="description" content="Hi, I'm Daniel Moody — freelance software engineer. Custom web, backend, and API development (and more)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
-    <img src="logo.png" alt="MOODY logo" class="logo" />
+  <div class="noise" aria-hidden="true"></div>
+  <div class="gradient-orb gradient-orb--1" aria-hidden="true"></div>
+  <div class="gradient-orb gradient-orb--2" aria-hidden="true"></div>
 
-    <h1>Freelance Software Engineer</h1>
+  <header class="header">
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <p>
-      I build reliable, scalable software for startups and businesses.
-      Specializing in web applications, APIs, and cloud systems.
-    </p>
+  <main>
+    <section class="hero">
+      <a href="/" class="hero__logo-wrap" aria-label="MOODY home" data-animate>
+        <img src="logo.png" alt="MOODY" class="hero__logo" />
+      </a>
+      <p class="hero__label" data-animate>Freelance Software Engineer</p>
+      <h1 class="hero__title" data-animate>
+        I build reliable, scalable software for startups and businesses.
+      </h1>
+      <p class="hero__sub" data-animate>
+        Specializing in web applications, APIs, and cloud systems.
+      </p>
+      <a href="#contact" class="hero__cta" data-animate>
+        <span>Get in touch</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+    </section>
 
-    <p class="contact">
-      Contact: <a href="mailto:danielmoody098@gmail.com">danielmoody098@gmail.com</a>
-    </p>
+    <section class="focus" id="work">
+      <h2 class="focus__title" data-animate>What I do</h2>
+      <ul class="focus__grid">
+        <li class="focus__card" data-animate>
+          <span class="focus__icon" aria-hidden="true">◇</span>
+          <h3>Web & frontend</h3>
+          <p>Custom sites and apps — fast, accessible, and built to last.</p>
+        </li>
+        <li class="focus__card" data-animate>
+          <span class="focus__icon" aria-hidden="true">◇</span>
+          <h3>Backend & APIs</h3>
+          <p>Services, integrations, and APIs that scale with your product.</p>
+        </li>
+        <li class="focus__card" data-animate>
+          <span class="focus__icon" aria-hidden="true">◇</span>
+          <h3>Cloud & systems</h3>
+          <p>Infrastructure and tooling so your stack runs smoothly.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-section__inner" data-animate>
+        <h2 class="contact-section__title">Let's work together</h2>
+        <p class="contact-section__text">Have a project in mind? Drop me a line.</p>
+        <a href="mailto:danielmoody098@gmail.com" class="contact-section__link">
+          danielmoody098@gmail.com
+        </a>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <p class="footer__copy">© <span class="footer__year"></span> MOODY</p>
+  </footer>
+
+  <script>
+    document.querySelector('.footer__year').textContent = new Date().getFullYear();
+    const animTargets = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    animTargets.forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
