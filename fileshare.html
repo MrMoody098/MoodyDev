@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="viewer-page"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FileShare — Daniel Moody</title><meta name="description" content="Over two weeks, my classmates and I built an end-to-end encrypted file-sharing system for the web and desktop.">
+<link rel="icon" href="logo.png"><link rel="stylesheet" href="style.css?v=viewer2">
+</head><body><header><a class="brand" href="index.html#top"><b aria-hidden="true">&gt;_</b> moody.ie</a><nav aria-label="Main navigation"><a href="index.html#work">Work</a><a href="index.html#experience">Experience</a><a href="index.html#ise">ISE</a><a href="index.html#contact">Contact</a></nav></header>
+<main class="case"><a href="index.html#work">‹ Selected work</a>
+<div class="path">Applied cryptography · University of Limerick</div><h1>FileShare<span>.</span></h1>
+<p class="lead">Over two weeks, my classmates and I built an end-to-end encrypted file-sharing system for the web and desktop.</p><div class="resource"><a href="https://github.com/MrMoody098/FileShare">Explore FileShare on GitHub ↗</a></div>
+<h2>Inside the web client</h2>
+<figure class="fileshare-recording">
+  <video controls playsinline preload="none" width="1200" height="800" poster="media/fileshare/landing.webp" aria-label="FileShare web client walkthrough">
+    <source src="media/fileshare/walkthrough.mp4" type="video/mp4">
+    <a href="media/fileshare/walkthrough.mp4">Download the walkthrough</a>
+  </video>
+  <figcaption>Walk through the landing page, sign in, compare Alex’s QR verification code, then share a file. The React client uses sample accounts and files with simulated server responses.</figcaption>
+</figure>
+<div class="fileshare-stills">
+  <figure><a href="media/fileshare/verification.webp"><img src="media/fileshare/verification.webp" width="1200" height="800" loading="lazy" alt="Verify User dialog displaying Alex’s QR code and matching text fingerprint"></a><figcaption>Verifying Alex’s identity before sharing</figcaption></figure>
+  <figure><a href="media/fileshare/library.webp"><img src="media/fileshare/library.webp" width="1200" height="800" loading="lazy" alt="FileShare library showing sample files with share, download, delete and preview actions"></a><figcaption>The file library</figcaption></figure>
+  <figure><a href="media/fileshare/recipients.webp"><img src="media/fileshare/recipients.webp" width="1200" height="800" loading="lazy" alt="Share File dialog with Alex selected from the verified recipients"></a><figcaption>Choosing a verified recipient</figcaption></figure>
+</div>
+<h2>What I designed</h2><p>My focus was the path a file takes from sender to recipient. I led the design of the cryptographic sharing flow and the OTP flow, and built most of the React client. Our team also built a native Qt client in C++ and a Python server.</p><p>We used Argon2id for password-based key derivation and envelope encryption to protect keys. For sharing, we combined trust on first use with X3DH key agreement. The goal was to let the server coordinate delivery while the clients retained control of the file contents.</p><h2>Architecture explorer</h2>
+<div id="architecture" class="diagram" aria-label="FileShare architecture explorer">
+  <div class="diagram-tools">
+    <label>Explore a flow
+      <select id="diagram-flow">
+        <option value="system">System architecture</option><option value="register">Account registration</option>
+        <option value="login">User login</option><option value="verify">Recipient verification</option>
+        <option value="share">Key agreement and sharing</option><option value="encrypt">File encryption</option>
+        <option value="keys">Key hierarchy</option><option value="all">Entire board</option>
+      </select>
+    </label>
+    <div class="diagram-zoom" aria-label="Zoom controls">
+      <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+      <output id="diagram-scale" aria-label="Zoom relative to whole board"></output>
+      <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+      <button type="button" id="diagram-fit">Fit flow</button>
+      <button type="button" id="diagram-fullscreen" aria-pressed="false">Full screen</button>
+    </div>
+  </div>
+  <div id="diagram-view" tabindex="0" role="region" aria-label="Architecture drawing. Use the arrow keys to pan.">
+    <img id="diagram-image" src="media/fileshare/architecture.svg" width="5400" height="2925" alt="FileShare system design, authentication, recipient verification, file sharing and encryption flows">
+  </div>
+  <div class="diagram-caption"><span>Drag to pan. Pinch or Ctrl + scroll to zoom.</span><a href="media/fileshare/architecture.pdf">Download PDF</a></div>
+</div>
+<script defer src="viewer-gestures.js?v=2"></script>
+<script defer src="architecture.js"></script>
+</main></body></html>

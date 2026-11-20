@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" class="viewer-page"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investor relations scraper — Daniel Moody</title><meta name="description" content="A Python research tool for finding investor relations documents from a company website.">
+<link rel="icon" href="logo.png"><link rel="stylesheet" href="style.css?v=viewer2">
+</head><body><header><a class="brand" href="index.html#top"><b aria-hidden="true">&gt;_</b> moody.ie</a><nav aria-label="Main navigation"><a href="index.html#work">Work</a><a href="index.html#experience">Experience</a><a href="index.html#ise">ISE</a><a href="index.html#contact">Contact</a></nav></header>
+<main class="case"><a href="index.html#work">‹ Selected work</a>
+<div class="path">Applied AI · Final-year project</div><h1>Investor relations scraper<span>.</span></h1>
+<p class="lead">A Python research tool for finding investor relations documents from a company website.</p><div class="resource"><a href="https://github.com/MrMoody098/FYP_LLM_IR_DOCUMENT_SCRAPER">Read the source ↗</a></div>
+<h2>From a homepage to a document</h2><p>A researcher can start with a company’s main website while the report they need sits several links away in its investor relations section. My final-year project tackled that discovery step. The Python scraper takes the company URL, fetches its HTML and uses an LLM to help locate investor relations documents.</p>
+<h2 id="report">Final-year report</h2>
+<p>I compared GPT-4.1 and Claude Sonnet 4.6 on the task of retrieving SEC filings from corporate investor relations websites.</p>
+<div class="report-reader">
+  <div class="report-bar"><span>Research report · April 2026 · 42 pages</span><a href="media/fyp/final-report.pdf">Open full report ↗</a></div>
+  <div class="reader-controls" hidden>
+    <button type="button" id="previous-page" aria-label="Previous page">‹</button>
+    <label>Page <select id="report-page"></select> of 42</label>
+    <button type="button" id="next-page" aria-label="Next page">›</button>
+    <button type="button" id="report-minus" aria-label="Zoom out">−</button>
+    <button type="button" id="report-fit">Fit width</button>
+    <button type="button" id="report-plus" aria-label="Zoom in">+</button>
+  </div>
+  <div id="report-view" role="region" tabindex="0" aria-label="Report reader. Use arrow keys to scroll.">
+    <img id="report-image" src="media/fyp/pages/1.svg" alt="Final-year report cover">
+  </div>
+  <script defer src="viewer-gestures.js?v=2"></script>
+  <script defer src="report-reader.js"></script>
+</div>
+</main></body></html>
