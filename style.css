@@ -77,21 +77,6 @@ html.viewer-page, .viewer-page body { touch-action: pan-x pan-y; }
   #ise h2 { margin-top: 18px; }
 }
 
-main.peeling { width: 100%; isolation: isolate; }
-main.peeling > .sheet {
-  position: sticky;
-  top: var(--pin);
-  min-height: 100svh;
-  padding-inline: 5%;
-  background-color: var(--paper);
-  transform: translateY(var(--lift, 0px));
-}
-.sheet-fold {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
 @media (max-width: 740px) {
   body:has(.hero) header { align-items: flex-start; flex-direction: column; gap: 8px; }
   body:has(.hero) nav { width: 100%; justify-content: space-between; }
